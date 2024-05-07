@@ -24,8 +24,11 @@ return {
         "stylua",
         "html-lsp",
         "css-lsp",
-        "prettier",
+        "prettierd",
         "clangd",
+        "typescript-language-server",
+        "tailwindcss-language-server",
+        "eslint-lsp",
       },
     },
   },
@@ -34,13 +37,31 @@ return {
     "jamestthompson3/nvim-remote-containers",
     cmd = { "AttachToContainer", "ComposeUp", "BuildImage", "StartImage" },
   },
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "lspcontainers/lspcontainers.nvim",
+  },
+  {
+    "ThePrimeagen/vim-be-good",
+    cmd = { "VimBeGood" },
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    ft = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = function()
+      local opts = require "plugins.configs.treesitter"
+      opts.ensure_installed = {
+        "lua",
+        "javascript",
+        "typescript",
+        "tsx",
+      }
+      return opts
+    end,
+  },
 }
