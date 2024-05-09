@@ -21,13 +21,13 @@ lspconfig.tsserver.setup {
   on_init = on_init,
   capabilities = capabilities,
 }
-
-lspconfig.clangd.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  cmd = require("lspcontainers").command "clangd",
-  on_new_config = function(new_config, new_root_dir)
-    new_config.cmd = require("lspcontainers").command("clangd", { root_dir = new_root_dir })
-  end,
-}
+--
+-- lspconfig.clangd.setup {
+--   on_attach = on_attach,
+--   on_init = on_init,
+--   capabilities = capabilities,
+--   cmd = require("lspcontainers").command "clangd",
+--   on_new_config = function(new_config, new_root_dir)
+--     new_config.cmd = require("lspcontainers").command("clangd", { root_dir = new_root_dir })
+--   end,
+-- }

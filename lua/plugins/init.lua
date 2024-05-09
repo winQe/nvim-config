@@ -33,13 +33,13 @@ return {
     },
   },
 
-  {
-    "jamestthompson3/nvim-remote-containers",
-    cmd = { "AttachToContainer", "ComposeUp", "BuildImage", "StartImage" },
-  },
-  {
-    "lspcontainers/lspcontainers.nvim",
-  },
+  -- {
+  --   "jamestthompson3/nvim-remote-containers",
+  --   cmd = { "AttachToContainer", "ComposeUp", "BuildImage", "StartImage" },
+  -- },
+  -- {
+  --   "lspcontainers/lspcontainers.nvim",
+  -- },
   {
     "ThePrimeagen/vim-be-good",
     cmd = { "VimBeGood" },
@@ -51,17 +51,17 @@ return {
       require("nvim-ts-autotag").setup()
     end,
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function()
-      local opts = require "plugins.configs.treesitter"
-      opts.ensure_installed = {
-        "lua",
-        "javascript",
-        "typescript",
-        "tsx",
-      }
-      return opts
-    end,
-  },
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   opts = function()
+  --     local opts = require "plugins.configs.treesitter"
+  --     opts.ensure_installed = {
+  --       "lua",
+  --       "javascript",
+  --       "typescript",
+  --       "tsx",
+  --     }
+  --     return opts
+  --   end,
+  -- },
 }
